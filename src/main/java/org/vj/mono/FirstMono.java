@@ -13,12 +13,13 @@ import reactor.core.publisher.Mono;
 public class FirstMono {
 
 	public static void main(String[] args) {
-		//Mono<String> mono = Mono.just("Vijay").log();
+		Mono<String> mono = Mono.just("Vijay").log();
 		
-		Mono<Object> mono = Mono.error(() -> new RuntimeException()).log();
+		//Mono<Object> mono = Mono.error(() -> new RuntimeException()).log();
 		
 		mono.subscribe(System.out::println,
-				e -> System.out.println("Exception Occurred while onNext() event."));
+				e -> System.out.println("Exception Occurred while onNext() event."),
+				() -> System.out.println("onComplete event pre process."));
 	}
 
 }

@@ -16,11 +16,11 @@ import reactor.core.publisher.Flux;
 public class ListToFlux {
 
 	public static void main(String[] args) {
-		//List<String> list = Arrays.asList("Vijay", "Jaya", "Subi");	//Flux with values
+		List<String> list = Arrays.asList("Vijay", "Jaya", "Subi");	//Flux with values
 		
 		//List<String> list = Arrays.asList();	// empty flux
 		
-		List<String> list = null;	// null pointer exception
+		//List<String> list = null;	// null pointer exception
 		
 		Flux<String> listFlux = Flux.fromIterable(list).log();
 		
